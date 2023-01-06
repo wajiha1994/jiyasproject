@@ -14,18 +14,20 @@ public class App
     public static void main( String[] args ) throws InterruptedException
     {
     	System.setProperty("webdriver.chrome.driver","C:\\Users\\anony\\eclipse-workspace\\project3\\drivers\\chromedriver.exe");
- 	   driver= new ChromeDriver(); //opening browser
- 	   driver.get("https://www.amazon.com"); //navigating to website
+ 	   driver= new ChromeDriver(); 
+ 	   driver.get("https://www.facebook.com"); 
  	   
  	   driver.manage().window().maximize();
  	   Thread.sleep(5000);
  	   
  	   
  	   
- 	   List<WebElement> Links= driver.findElements(By.tagName("img"));
+ 	   List<WebElement> Links= driver.findElements(By.tagName("a"));
  	   
  	   for (int i=0; i<Links.size()-1;i++) {
- 		   System.out.println(Links.get(i).getAttribute("src"));
+ 		   System.out.println(Links.get(i).getAttribute("href"));
+ 		   
+ 		  
  	   }
     }
 }
